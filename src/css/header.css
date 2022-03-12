@@ -1,0 +1,8 @@
+@font-face {
+  font-family: title-font;
+  src: url('../font/BebasNeue-Regular.ttf')  format('truetype');
+}
+.header-title{
+	font-family: title-font;
+	font-size: 1.6em;
+}

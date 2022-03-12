@@ -1,0 +1,61 @@
+.case{
+	background:#161618;
+	font: small-caps bold 30px sans-serif;
+}
+
+.good-letter{
+	animation: goodletter 1s 1;
+	background: green;
+}
+.bad-letter{
+	animation: badletter 1s 1;
+	background: #232326;
+}
+.half-letter{
+	animation: halfletter 1s 1;
+	background: #C7C10B;
+}
+
+
+@keyframes goodletter{
+	0% {
+		transform: rotate(0);
+		background: #161618;
+	}
+	40%{
+		background: #161618;
+	}
+	100% {
+		transform: rotate3d(1,0,0,360deg);
+		background: green;
+	}
+}
+
+@keyframes badletter{
+	0% {
+		transform: rotate(0);
+		background: #161618;
+	}
+	40%{
+		background: #161618;
+	}
+	100% {
+		transform: rotate3d(1,0,0,360deg);
+		background: #232326;
+	}
+}
+
+@keyframes halfletter{
+	0% {
+		transform: rotate(0);
+		background: #161618;
+	}
+	40%{
+		background: #161618;
+	}
+	100% {
+		transform: rotate3d(1,0,0,360deg);
+		background: #C7C10B;
+	}
+}
+

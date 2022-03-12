@@ -1,0 +1,8 @@
+@font-face {
+  font-family: customfont;
+  src: url('../font/AmaticSC-Bold.ttf')  format('truetype');
+}
+.word-to-guess{
+	font-family: customfont;
+	font-size: 1.6em;
+}
