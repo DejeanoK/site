@@ -1,7 +1,9 @@
 import React from 'react';
 import '../css/Wordle.css'
+import '../css/font1.css'
 
 import Case from './Case.js';
+import Clavier from './Clavier.js';
 
 const attempt_max = 6;
 const word_size = 5;
@@ -18,17 +20,23 @@ class Quiz extends React.Component {
 				grid[i][j] = '';
 			}
 		}
+		let mapl = {};
+		for(let c of legalChars){
+			mapl[c] = "text-white bg-[#161618] border-[#454549]"
+		}
 		this.keyHandler = this.keyHandler.bind(this)
 		this.state = {
 			grid : grid,
 			attempt : 0,
 			currentChar : 0,
+			mapl : mapl,
 		}
 	}
 	keyHandler(event){
 		let grid = this.state.grid
 		let currentChar = this.state.currentChar
 		let attempt = this.state.attempt;
+		let mapl = this.state.mapl
 		
 		if(legalChars.includes(event.key) && currentChar<word_size){
 			grid[attempt][currentChar] = event.key;
@@ -42,6 +50,7 @@ class Quiz extends React.Component {
 					guess = false;
 				}
 				else {
+					mapl[grid[attempt][i]] = "text-[#454549] bg-[#161618] border-[#161618]"
 					guess = false;
 				}
 			}
@@ -62,6 +71,7 @@ class Quiz extends React.Component {
 			grid : grid,
 			attempt : attempt,
 			currentChar : currentChar,
+			mapl : mapl
 		});
 	}
 	componentDidMount(){
@@ -90,11 +100,13 @@ class Quiz extends React.Component {
 		});
 		return(
 			<React.Fragment>
-				<div className="flex justify-center mt-20">
+				<div className="flex justify-center mt-20 mb-20">
 					<div className = "grid grid-cols-5 gap-1" >
 						{gridItem}
 					</div>
 				</div>
+				{this.state.attempt === attempt_max ? <div className="text-white flex justify-center mt-5 font1">{this.state.word}</div> : ""}
+				<Clavier keyboard = {this.state.mapl}/>
 			</React.Fragment>
 		);
 	}
