@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/Wordle.css'
 
 function Clavier(props) {
-	let lines = ["azertyuiop","qsdfghjkl","wxcvbn"];
+	let lines = ["azertyuiop","qsdfghjklm","wxcvbn"];
 	return(
 		<React.Fragment>
 		{lines.map( (l) => {
