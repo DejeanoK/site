@@ -96,7 +96,7 @@ class Quiz extends React.Component {
 
 	render(){
 		let gridItem = this.state.grid.map( (name,index1) => {
-			return (this.state.grid[0].map( (name,index2) => {return <Case key = {index1 + " " + index2} charac = {this.state.grid[index1][index2]} word = {this.state.word} confirmed = {this.state.attempt > index1} pos = {index2} ></Case>}))
+			return (this.state.grid[0].map( (name,index2) => {return <Case key = {index1 + " " + index2} guess={this.state.grid[index1]} charac = {this.state.grid[index1][index2]} word = {this.state.word} confirmed = {this.state.attempt > index1} pos = {index2} ></Case>}))
 		});
 		return(
 			<React.Fragment>
